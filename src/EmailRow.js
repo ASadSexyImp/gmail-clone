@@ -5,20 +5,20 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./EmailRow.css";
-// import { selectMail } from "./features/mailSlice";
+import { selectMail } from "./features/mailSlice";
 
 function EmailRow({ id, title, subject, description, time }) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const openMail = () => {
         dispatch(
-        // selectMail({
-        //     id,
-        //     title,
-        //     subject,
-        //     description,
-        //     time,
-        // })
+            selectMail({
+                id,
+                title,
+                subject,
+                description,
+                time,
+            })
         );
         navigate("/mail");
     };
